@@ -1,3 +1,5 @@
+import 'package:bookticket_demo/screens/ticket_view.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -21,6 +23,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
+                Gap(40),
                 Row(
                   // 设置主轴样式
                   // 对于行来说，行就是主轴，列是交叉轴
@@ -50,10 +53,35 @@ class HomeScreen extends StatelessWidget {
                       ),
                     )
                   ],
-                )
+                ),
+                Gap(25),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xFFF4F6FD)
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 12),
+                  child: Row(children: [
+                    Icon(FluentSystemIcons.ic_fluent_search_regular, color: Color(0xFFBFC205),),
+                    Text("Search", style: Styles.headLineStyle4)
+                  ],),
+                ),
+                Gap(40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  Text("Upcoming Flights", style: Styles.headLineStyle2),
+                  InkWell(
+                      onTap: () {
+                        print("click view all");
+                      },
+                      child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor)))
+                ],),
               ],
             ),
-          )
+          ),
+          Gap(15),
+          TicketView(),
         ],
       ),
     );
