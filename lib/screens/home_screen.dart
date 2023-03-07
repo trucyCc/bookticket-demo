@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/app_styles.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFeeedf2),
+      backgroundColor: Styles.bgColor,
       body: ListView(
         children: [
           Container(
@@ -24,12 +26,13 @@ class HomeScreen extends StatelessWidget {
                   // 对于列来说，列就是主轴，行是交叉轴
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                     Column(
                       // 两个组件头部齐平
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Good morning"),
-                        Text("Book Tickets"),
+                        Text("Good morning", style: Styles.headLineStyle3),
+                        SizedBox(height: 5),
+                        Text("Book Tickets", style: Styles.headLineStyle),
                       ],
                     ),
                     Container(
