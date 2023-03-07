@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../utils/app_styles.dart';
 
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Good morning", style: Styles.headLineStyle3),
-                        SizedBox(height: 5),
+                        Gap(5),
                         Text("Book Tickets", style: Styles.headLineStyle),
                       ],
                     ),
